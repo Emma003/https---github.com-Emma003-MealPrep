@@ -3,15 +3,20 @@ import ThemedButton from "@/components/themed-button";
 import ThemedLink from "@/components/themed-link";
 import ThemedText from "@/components/themed-text";
 import ThemedView from "@/components/themed-view";
+import { images } from "@/constants/images";
 import { useRouter } from "expo-router";
-import { Text } from "react-native";
+import { Image, Text } from "react-native";
 
 export default function Index() {
   const router = useRouter()
 
   return (
-    <ThemedView safe={true} className="flex-1 justify-center items-center">
-      <Spacer height={20}/>
+    <ThemedView safe={true} className="flex-1 items-center">
+      <Image 
+        source={images.landingPage} 
+        className="z-0 absolute w-full h-screen" 
+      />
+      <Spacer height={190}/>
       <ThemedText title={true} className='text-6xl font-semibold shadow-sm'>
         MealPlan
       </ThemedText>
@@ -20,7 +25,7 @@ export default function Index() {
         Your meal prep assistant
       </ThemedText>
 
-      <Spacer height={150}/>
+      <Spacer height={60}/>
 
       <ThemedButton
       onPress={() => router.push('/login')}
