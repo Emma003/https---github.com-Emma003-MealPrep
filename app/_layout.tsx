@@ -35,6 +35,10 @@ export default function RootLayout() {
           name="(dashboard)" 
           options={{ title: "Dashboard" }} 
         />
+        <Stack.Screen 
+          name="(generate)" 
+          options={{ title: "Generate" }} 
+        />
       </Stack>
     </UserProvider>
   )
