@@ -24,3 +24,17 @@ export type UserPreferences = {
     allergies: string[]
     dislikes: string[]
 }
+
+export type FormInfo = {
+    id: string
+    userId: string
+    smoothies: number
+    salads: number
+    mainDishes: number
+    soups: number
+    snacks: number
+    desserts: number
+    foodsToInclude: string[]
+    foodsToAvoid: string[]
+    cuisine: string[]
+}
