@@ -45,6 +45,7 @@ const PageOne = () => {
                 icon={icons.smoothieOutline}
                 value={formInfo.smoothies}
                 onModify={modifySmoothies}
+                color='#9c6292'
             />
 
             <NumberOfMeal 
@@ -52,6 +53,7 @@ const PageOne = () => {
                 icon={icons.saladOutline}
                 value={formInfo.salads}
                 onModify={modifySalads}
+                color='#9c6292'
             />
 
             <NumberOfMeal 
@@ -59,6 +61,7 @@ const PageOne = () => {
                 icon={icons.mealOutline}
                 value={formInfo.mainDishes}
                 onModify={modifyMainDishes}
+                color='#9c6292'
             />
 
         </SafeAreaView>

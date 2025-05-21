@@ -7,6 +7,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { icons } from '@/constants/icons'
 import PageOne from '@/components/form/page-one'
 import ProgressBar from '@/components/form/progress-bar'
+import PageTwo from '@/components/form/page-two'
 
 
 
@@ -19,7 +20,8 @@ const PlanForm = () => {
   return (
 
     <View className='flex-1'>
-      <PageOne />
+      {/* <PageOne /> */}
+      <PageTwo />
     </View>
   )
 }

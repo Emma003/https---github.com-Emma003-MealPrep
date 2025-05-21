@@ -7,10 +7,11 @@ interface NumberOfMealProps {
     meal: string,
     icon: ImageSourcePropType,
     value: number,
-    onModify: (increment: boolean) => void
+    onModify: (increment: boolean) => void,
+    color: string
 }
 
-const NumberOfMeal = ({ meal, icon, value, onModify }: NumberOfMealProps) => {
+const NumberOfMeal = ({ meal, icon, value, onModify, color }: NumberOfMealProps) => {
     const [count, setCount] = useState(value)
     const scaleAnim = useRef(new Animated.Value(1)).current
 
@@ -35,8 +36,11 @@ const NumberOfMeal = ({ meal, icon, value, onModify }: NumberOfMealProps) => {
 
   return(
     <Animated.View 
-        style={{ transform: [{ scale: scaleAnim }] }}
-        className='flex-row bg-[#9c6292] h-[140] w-[350] rounded-md items-center pl-4 gap-4 mb-5'
+        style={{ 
+            transform: [{ scale: scaleAnim }],
+            backgroundColor: color,
+        }}
+        className='flex-row h-[140] w-[350] rounded-md items-center pl-4 gap-4 mb-5'
     >
       <Image 
         source={icon} 

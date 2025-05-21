@@ -21,9 +21,9 @@ const emptyInfo = {
   smoothies: 3,
   salads: 3,
   mainDishes: 3,
-  snacks: 0,
-  soups: 0,
-  desserts: 0,
+  snacks: 3,
+  soups: 3,
+  desserts: 3,
   foodsToInclude: [],
   foodsToAvoid: [],
   cuisine: []
