@@ -6,6 +6,8 @@ import Spacer from '@/components/spacer'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { icons } from '@/constants/icons'
 import PageOne from '@/components/form/page-one'
+import ProgressBar from '@/components/form/progress-bar'
+
 
 
 const PlanForm = () => {
@@ -15,6 +17,7 @@ const PlanForm = () => {
     Completely different color palette?
   */
   return (
+
     <View className='flex-1'>
       <PageOne />
     </View>
