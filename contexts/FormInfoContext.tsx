@@ -77,7 +77,7 @@ export function FormInfoProvider({ children }: FormInfoProviderProps) {
     setFormInfo({ ...formInfo, desserts: increment ? formInfo.desserts + 1 : formInfo.desserts - 1 })
   }
 
-  const modifyFoodsToInclude = (add: boolean, food: string) => {
+  const modifyFoodsToInclude = (add: boolean = true, food: string) => {
     if (add) {
       setFormInfo({ ...formInfo, foodsToInclude: [...formInfo.foodsToInclude, food] })
     } else {

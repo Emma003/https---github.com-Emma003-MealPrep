@@ -34,7 +34,7 @@ const PageOne = () => {
                 fontFamily: 'Didot',
             }]}
             className='text-5xl text-center'
-                    >
+            >
                 Select the amount of meals desired
             </Text>
 

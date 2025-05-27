@@ -1,13 +1,8 @@
-import { View, Text, Image } from 'react-native'
-import React from 'react'
-import ThemedView from '@/components/themed-view'
-import ThemedText from '@/components/themed-text'
-import Spacer from '@/components/spacer'
-import { SafeAreaView } from 'react-native-safe-area-context'
-import { icons } from '@/constants/icons'
-import PageOne from '@/components/form/page-one'
-import ProgressBar from '@/components/form/progress-bar'
+import PageFour from '@/components/form/page-four'
+import PageThree from '@/components/form/page-three'
 import PageTwo from '@/components/form/page-two'
+import React from 'react'
+import { View } from 'react-native'
 
 
 
@@ -21,7 +16,9 @@ const PlanForm = () => {
 
     <View className='flex-1'>
       {/* <PageOne /> */}
-      <PageTwo />
+      {/* <PageTwo /> */}
+      {/* <PageThree /> */}
+      <PageFour />
     </View>
   )
 }

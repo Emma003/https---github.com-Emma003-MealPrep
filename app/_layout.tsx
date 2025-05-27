@@ -9,6 +9,7 @@ export default function RootLayout() {
   const [loaded] = useFonts({
     CircularStdMedium: require("@/assets/fonts/CircularStd-Medium.ttf"),
     CircularStdLight: require('../assets/fonts/CircularStd-Light.otf'),
+    CabinetGroteskVariable: require('../assets/fonts/CabinetGrotesk-Variable.ttf'),
   })
 
   if(!loaded) {

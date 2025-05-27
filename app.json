@@ -39,7 +39,8 @@
         {
           "fonts": [
             "./assets/fonts/CircularStd-Medium.ttf",
-            "./assets/fonts/CircularStd-Light.otf"
+            "./assets/fonts/CircularStd-Light.otf",
+            "./assets/fonts/CabinetGrotesk-Variable.ttf"
           ]
         }
       ]
