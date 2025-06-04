@@ -1,104 +1,77 @@
 import Spacer from '@/components/spacer'
-import { icons } from '@/constants/icons'
-import useFormInfo from '@/hooks/useFormInfo'
 import React, { useState } from 'react'
-import { Text, View, Image, TouchableWithoutFeedback, Keyboard, FlatList, Pressable } from 'react-native'
+import { FlatList, Keyboard, Text, TouchableWithoutFeedback } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import NumberOfMeal from './number-of-meal'
+import CuisineCard from './cuisine-card'
 import ProgressBar from './progress-bar'
-import Feather from '@expo/vector-icons/Feather';
-import Badge from './badge'
-import TailwindButton from './tailwind-button'
+import { icons } from '@/constants/icons'
 
-
-const cuisines = [
+const initialCuisines = [
     {
       "title": "Mexican",
-      "icon": "https://www.flaticon.com/free-icon/taco_1046783"
+      "icon": icons.mexican,
+      "pressed": false
     },
     {
       "title": "Indian",
-      "icon": "https://www.flaticon.com/free-icon/curry_1046786"
+      "icon": icons.indian,
+      "pressed": false
     },
     {
       "title": "Nigerian",
-      "icon": "https://www.flaticon.com/free-icon/jollof-rice_1046790"
+      "icon": icons.nigerian,
+      "pressed": false
     },
     {
       "title": "Italian",
-      "icon": "https://www.flaticon.com/free-icon/spaghetti_1046784"
+      "icon": icons.italian,
+      "pressed": false
     },
     {
       "title": "Chinese",
-      "icon": "https://www.flaticon.com/free-icon/dumplings_1046785"
+      "icon": icons.chinese,
+      "pressed": false
     },
     {
       "title": "Japanese",
-      "icon": "https://www.flaticon.com/free-icon/sushi_1046787"
+      "icon": icons.japanese,
+      "pressed": false
     },
     {
       "title": "French",
-      "icon": "https://www.flaticon.com/free-icon/croissant_1046788"
+      "icon": icons.french,
+      "pressed": false
     },
     {
       "title": "Thai",
-      "icon": "https://www.flaticon.com/free-icon/pad-thai_1046789"
+      "icon": icons.thai,
+      "pressed": false
     },
     {
       "title": "Greek",
-      "icon": "https://www.flaticon.com/free-icon/greek-salad_1046791"
+      "icon": icons.greek,
+      "pressed": false
     },
     {
       "title": "Spanish",
-      "icon": "https://www.flaticon.com/free-icon/paella_1046792"
+      "icon": icons.spanish,
+      "pressed": false
     }
-  ]
-
-const CuisineCard = ({ cuisine, image }: { cuisine: string, image: string }) => {
-    return (
-        <View className='w-[100px] h-[100px] bg-[#2a4522] rounded-md items-center justify-center'>
-            <Image 
-                source={{ uri: image }}
-            />
-            <Text 
-            style={[{
-                color: 'white',
-                fontFamily: 'CircularStd-Medium',
-            }]}
-            className='text-2xl text-center'
-            >{cuisine}</Text>
-        </View>
-    )
-}
+]
 
 const PageFour = () => {
-  /*
-    Form flow: when you click on 'create plan' in homepage, form should slide up
-    Fill up form, swipe up for next, swipe down for previous
-    Completely different color palette?
-  */
+    const [cuisines, setCuisines] = useState(initialCuisines);
 
-    const { formInfo, modifyFoodsToInclude, modifyFoodsToExclude } = useFormInfo()
-    const [foodName, setFoodName] = useState('')
-    const [foodsToInclude, setFoodsToInclude] = useState<string[]>([])
-
-    const addFood = (food: string) => {
-        food = food.trim()
-        if (food === '' || formInfo.foodsToInclude.includes(food)) {
-            return
-        }
-        
-        const trailingText = food.length >= 10 ? food.slice(0, 7) + '...' : food
-
-        setFoodsToInclude([...foodsToInclude, trailingText])
-        modifyFoodsToInclude(true, food)
-        setFoodName('')
-    }
-
-    const removeFood = (food: string) => {
-        setFoodsToInclude(foodsToInclude.filter((f) => f !== food))
-        modifyFoodsToInclude(false, food)
-    }
+    const handleCuisinePress = (index: number) => {
+        setCuisines(prevCuisines => {
+            const newCuisines = [...prevCuisines];
+            newCuisines[index] = {
+                ...newCuisines[index],
+                pressed: !newCuisines[index].pressed
+            };
+            return newCuisines;
+        });
+    };
 
     return (
         <TouchableWithoutFeedback
@@ -108,37 +81,49 @@ const PageFour = () => {
                 style={[{
                     backgroundColor: '#4a8435',
                 }]}
-            className="flex-1 items-center"
-        >
-            <ProgressBar 
-                progress={4}
-                color='#2a4522'
-            />
-            <Spacer height={60}/>
-            <Text 
-            style={[{
-                color: 'white',
-                fontFamily: 'Didot',
-            }]}
-            className='text-5xl text-center'
+                className="flex-1 items-center"
             >
-                What cuisine do you want to eat?
-            </Text>
+                <ProgressBar 
+                    progress={4}
+                    color='#2a4522'
+                />
+                <Spacer height={60}/>
+                <Text 
+                style={[{
+                    color: 'white',
+                    fontFamily: 'Didot',
+                }]}
+                className='text-5xl text-center'
+                >
+                    Any cuisine preferences?
+                </Text>
 
-            <Spacer height={60}/>
+                <Spacer height={60}/>
 
-            <CuisineCard 
-                cuisine='Italian'
-                image='https://www.flaticon.com/free-icon/taco_1046783'
-            />
-
-            <TailwindButton />
-
+                <FlatList
+                    data={cuisines}
+                    renderItem={({ item, index }) => (
+                        <CuisineCard 
+                            cuisine={item}
+                            index={index}
+                            onPress={() => handleCuisinePress(index)}
+                        />
+                    )}
+                    keyExtractor={(item) => item.title}
+                    numColumns={3}
+                    columnWrapperStyle={{ 
+                        justifyContent: 'space-around',
+                        gap: 16,
+                    }}
+                    contentContainerStyle={{ 
+                        paddingHorizontal: 12,
+                        gap: 16,
+                    }}
+                />
 
             </SafeAreaView>
         </TouchableWithoutFeedback>
     )
 }
-
 
 export default PageFour
