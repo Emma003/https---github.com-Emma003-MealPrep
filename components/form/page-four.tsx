@@ -1,10 +1,11 @@
 import Spacer from '@/components/spacer'
+import { icons } from '@/constants/icons'
+import useFormInfo from '@/hooks/useFormInfo'
 import React, { useState } from 'react'
 import { FlatList, Keyboard, Text, TouchableWithoutFeedback } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import CuisineCard from './cuisine-card'
 import ProgressBar from './progress-bar'
-import { icons } from '@/constants/icons'
 
 const initialCuisines = [
     {
@@ -61,6 +62,7 @@ const initialCuisines = [
 
 const PageFour = () => {
     const [cuisines, setCuisines] = useState(initialCuisines);
+    const { modifyCuisinePreferences } = useFormInfo()
 
     const handleCuisinePress = (index: number) => {
         setCuisines(prevCuisines => {
@@ -69,6 +71,7 @@ const PageFour = () => {
                 ...newCuisines[index],
                 pressed: !newCuisines[index].pressed
             };
+            modifyCuisinePreferences(newCuisines.filter(cuisine => cuisine.pressed).map(cuisine => cuisine.title));
             return newCuisines;
         });
     };

@@ -2,27 +2,34 @@ import PageFour from '@/components/form/page-four'
 import PageOne from '@/components/form/page-one'
 import PageThree from '@/components/form/page-three'
 import PageTwo from '@/components/form/page-two'
+import useFormInfo from '@/hooks/useFormInfo'
+import { useRouter } from 'expo-router'
 import React, { useState } from 'react'
 import { Text, TouchableOpacity, View } from 'react-native'
 
 const PlanForm = () => {
   const [currentPage, setCurrentPage] = useState(1)
+  const router = useRouter()
+  const { formInfo } = useFormInfo()
 
   const handleNext = () => {
     if (currentPage < 4) {
       setCurrentPage(currentPage + 1)
     }
+    console.log(formInfo)
   }
 
   const handlePrevious = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1)
     }
+    console.log(formInfo)
   }
 
   const handleFinish = () => {
     // TODO: Implement finish logic
     console.log('Form completed!')
+    router.push('/load_generate')
   }
 
   const renderPage = () => {
@@ -43,20 +50,42 @@ const PlanForm = () => {
   return (
     <View className='flex-1'>
       {renderPage()}
-      <View className='flex-row justify-between px-4 py-4 bg-white'>
+      <View 
+        style={{
+          backgroundColor: '#c77ab9',
+        }}
+        className='flex-row justify-between items-center px-8 py-6'
+      >
         <TouchableOpacity
           onPress={handlePrevious}
           disabled={currentPage === 1}
-          className={`px-6 py-2 rounded-full ${currentPage === 1 ? 'bg-gray-300' : 'bg-[#c77ab9]'}`}
+          style={{
+            opacity: currentPage === 1 ? 0.5 : 1,
+          }}
+          className='px-8 py-3 rounded-full bg-[#9c6292]'
         >
-          <Text className='text-white font-semibold'>Previous</Text>
+          <Text 
+            style={{
+              fontFamily: 'Didot',
+              color: 'white',
+            }}
+            className='text-xl'
+          >
+            Previous
+          </Text>
         </TouchableOpacity>
         
         <TouchableOpacity
           onPress={currentPage === 4 ? handleFinish : handleNext}
-          className='px-6 py-2 rounded-full bg-[#c77ab9]'
+          className='px-8 py-3 rounded-full bg-[#9c6292]'
         >
-          <Text className='text-white font-semibold'>
+          <Text 
+            style={{
+              fontFamily: 'Didot',
+              color: 'white',
+            }}
+            className='text-xl'
+          >
             {currentPage === 4 ? 'Finish' : 'Next'}
           </Text>
         </TouchableOpacity>

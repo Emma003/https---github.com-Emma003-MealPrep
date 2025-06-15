@@ -1,6 +1,6 @@
-import { Image, Text, TouchableOpacity, View, ImageSourcePropType, Animated } from "react-native"
 import Foundation from "@expo/vector-icons/Foundation"
-import { useRef, useState } from "react"
+import { useRef } from "react"
+import { Animated, Image, ImageSourcePropType, Text, TouchableOpacity, View } from "react-native"
 import Spacer from "../spacer"
 
 interface NumberOfMealProps {
@@ -12,7 +12,6 @@ interface NumberOfMealProps {
 }
 
 const NumberOfMeal = ({ meal, icon, value, onModify, color }: NumberOfMealProps) => {
-    const [count, setCount] = useState(value)
     const scaleAnim = useRef(new Animated.Value(1)).current
 
     const handlePressIn = () => {
@@ -27,11 +26,6 @@ const NumberOfMeal = ({ meal, icon, value, onModify, color }: NumberOfMealProps)
             toValue: 1,
             useNativeDriver: true,
         }).start()
-    }
-
-    const handleModify = (increment: boolean) => {
-        setCount(increment ? count + 1 : count - 1)
-        onModify(increment)
     }
 
   return(
@@ -62,7 +56,7 @@ const NumberOfMeal = ({ meal, icon, value, onModify, color }: NumberOfMealProps)
 
         <View className='flex-row justify-center items-center gap-6'>
             <TouchableOpacity 
-                onPress={() => count > 0 && handleModify(false)}
+                onPress={() => value > 0 && onModify(false)}
                 onPressIn={handlePressIn}
                 onPressOut={handlePressOut}
             >
@@ -75,11 +69,11 @@ const NumberOfMeal = ({ meal, icon, value, onModify, color }: NumberOfMealProps)
                     fontFamily: 'Didot',
                 }]}
             >
-                {count}
+                {value}
             </Text>
 
             <TouchableOpacity 
-                onPress={() => count < 10 && handleModify(true)}
+                onPress={() => value < 10 && onModify(true)}
                 onPressIn={handlePressIn}
                 onPressOut={handlePressOut}
             >

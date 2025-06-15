@@ -12,7 +12,7 @@ export interface FormInfoInterface {
   modifyDesserts: (increment: boolean) => void,
   modifyFoodsToInclude: (add: boolean, food: string) => void
   modifyFoodsToExclude: (add: boolean, food: string) => void
-  modifyCuisinePreferences: (add: boolean, cuisine: string) => void
+  modifyCuisinePreferences: (cuisines: string[]) => void
 }
 
 const emptyInfo = {
@@ -26,7 +26,7 @@ const emptyInfo = {
   desserts: 3,
   foodsToInclude: [],
   foodsToAvoid: [],
-  cuisine: []
+  cuisines: []
 }
 
 const defaultFormInfoContext: FormInfoInterface = {
@@ -54,6 +54,7 @@ export function FormInfoProvider({ children }: FormInfoProviderProps) {
   const [formInfo, setFormInfo] = useState<FormInfo>(emptyInfo)
 
   const modifySmoothies = (increment: boolean) => {
+    console.log("smoothies", formInfo.smoothies)
     setFormInfo({ ...formInfo, smoothies: increment ? formInfo.smoothies + 1 : formInfo.smoothies - 1 })
   }
 
@@ -93,12 +94,9 @@ export function FormInfoProvider({ children }: FormInfoProviderProps) {
     }
   }
 
-  const modifyCuisinePreferences = (add: boolean, cuisine: string) => {
-    if (add) {
-      setFormInfo({ ...formInfo, cuisine: [...formInfo.cuisine, cuisine] })
-    } else {
-      setFormInfo({ ...formInfo, cuisine: formInfo.cuisine.filter(c => c !== cuisine) })
-    }
+  const modifyCuisinePreferences = (cuisines: string[]) => {
+    console.log("cuisines", cuisines)
+    setFormInfo({ ...formInfo, cuisines: cuisines })
   }
   
   return (

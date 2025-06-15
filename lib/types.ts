@@ -36,5 +36,5 @@ export type FormInfo = {
     desserts: number
     foodsToInclude: string[]
     foodsToAvoid: string[]
-    cuisine: string[]
+    cuisines: string[]
 }
