@@ -54,7 +54,6 @@ export function FormInfoProvider({ children }: FormInfoProviderProps) {
   const [formInfo, setFormInfo] = useState<FormInfo>(emptyInfo)
 
   const modifySmoothies = (increment: boolean) => {
-    console.log("smoothies", formInfo.smoothies)
     setFormInfo({ ...formInfo, smoothies: increment ? formInfo.smoothies + 1 : formInfo.smoothies - 1 })
   }
 
@@ -95,7 +94,6 @@ export function FormInfoProvider({ children }: FormInfoProviderProps) {
   }
 
   const modifyCuisinePreferences = (cuisines: string[]) => {
-    console.log("cuisines", cuisines)
     setFormInfo({ ...formInfo, cuisines: cuisines })
   }
   

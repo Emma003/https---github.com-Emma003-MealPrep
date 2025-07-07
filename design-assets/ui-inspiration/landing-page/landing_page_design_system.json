@@ -1,0 +1,312 @@
+{
+  "designSystem": {
+    "name": "Vide Frigo Design System",
+    "version": "1.0.0",
+    "description": "Clean, minimalist design system with elegant typography and subtle visual hierarchy",
+    
+    "colors": {
+      "palette": {
+        "primary": {
+          "background": "#FAFAFA",
+          "text": "#1A1A1A",
+          "accent": "#2C2C2C"
+        },
+        "neutral": {
+          "white": "#FFFFFF",
+          "light_gray": "#F5F5F5",
+          "medium_gray": "#E5E5E5",
+          "dark_gray": "#4A4A4A",
+          "black": "#000000"
+        }
+      },
+      "usage": {
+        "background": "primary.background",
+        "text_primary": "primary.text",
+        "text_secondary": "neutral.dark_gray",
+        "button_primary": "primary.accent",
+        "button_text": "neutral.white"
+      }
+    },
+
+    "typography": {
+      "fontFamilies": {
+        "primary": {
+          "name": "Inter, system-ui, -apple-system, sans-serif",
+          "fallback": "Arial, sans-serif",
+          "description": "Clean, modern sans-serif for all text"
+        }
+      },
+      "fontSizes": {
+        "hero": {
+          "size": "clamp(3rem, 8vw, 6rem)",
+          "lineHeight": "1.1",
+          "letterSpacing": "-0.02em",
+          "fontWeight": "400"
+        },
+        "headline": {
+          "size": "clamp(1.5rem, 4vw, 2.5rem)",
+          "lineHeight": "1.2",
+          "letterSpacing": "-0.01em",
+          "fontWeight": "500"
+        },
+        "subheadline": {
+          "size": "clamp(1rem, 2.5vw, 1.25rem)",
+          "lineHeight": "1.4",
+          "letterSpacing": "0",
+          "fontWeight": "400"
+        },
+        "body": {
+          "size": "1rem",
+          "lineHeight": "1.6",
+          "letterSpacing": "0",
+          "fontWeight": "400"
+        },
+        "button": {
+          "size": "1rem",
+          "lineHeight": "1.4",
+          "letterSpacing": "0",
+          "fontWeight": "500"
+        }
+      },
+      "textStyles": {
+        "hero_title": {
+          "fontSize": "fontSizes.hero",
+          "color": "colors.primary.text",
+          "textAlign": "center",
+          "maxWidth": "12ch",
+          "margin": "0 auto"
+        },
+        "tagline": {
+          "fontSize": "fontSizes.subheadline",
+          "color": "colors.neutral.dark_gray",
+          "textAlign": "center",
+          "maxWidth": "40ch",
+          "margin": "0 auto"
+        }
+      }
+    },
+
+    "spacing": {
+      "scale": {
+        "xs": "0.25rem",
+        "sm": "0.5rem",
+        "md": "1rem",
+        "lg": "1.5rem",
+        "xl": "2rem",
+        "2xl": "3rem",
+        "3xl": "4rem",
+        "4xl": "6rem",
+        "5xl": "8rem"
+      },
+      "sections": {
+        "hero_padding_top": "spacing.5xl",
+        "hero_padding_bottom": "spacing.4xl",
+        "content_gap": "spacing.3xl",
+        "element_gap": "spacing.xl"
+      }
+    },
+
+    "layout": {
+      "container": {
+        "maxWidth": "1200px",
+        "padding": "0 1rem",
+        "margin": "0 auto"
+      },
+      "grid": {
+        "columns": 12,
+        "gap": "1rem"
+      },
+      "breakpoints": {
+        "mobile": "320px",
+        "tablet": "768px",
+        "desktop": "1024px",
+        "wide": "1200px"
+      }
+    },
+
+    "components": {
+      "logo": {
+        "structure": {
+          "type": "icon_with_text",
+          "layout": "vertical",
+          "alignment": "center"
+        },
+        "icon": {
+          "size": "2.5rem",
+          "color": "colors.primary.text",
+          "style": "outline",
+          "strokeWidth": "1.5px"
+        },
+        "text": {
+          "fontSize": "0.875rem",
+          "fontWeight": "500",
+          "letterSpacing": "0.1em",
+          "textTransform": "uppercase",
+          "color": "colors.primary.text",
+          "marginTop": "0.5rem"
+        }
+      },
+
+      "hero_section": {
+        "structure": {
+          "layout": "vertical",
+          "alignment": "center",
+          "spacing": "spacing.3xl"
+        },
+        "background": "colors.primary.background",
+        "padding": {
+          "top": "spacing.5xl",
+          "bottom": "spacing.4xl",
+          "horizontal": "spacing.lg"
+        },
+        "content": {
+          "maxWidth": "800px",
+          "textAlign": "center"
+        }
+      },
+
+      "primary_button": {
+        "appearance": {
+          "backgroundColor": "colors.primary.accent",
+          "color": "colors.neutral.white",
+          "border": "none",
+          "borderRadius": "2rem"
+        },
+        "dimensions": {
+          "minWidth": "200px",
+          "padding": "1rem 2rem",
+          "height": "auto"
+        },
+        "typography": {
+          "fontSize": "fontSizes.button.size",
+          "fontWeight": "fontSizes.button.fontWeight",
+          "letterSpacing": "0"
+        },
+        "states": {
+          "hover": {
+            "backgroundColor": "colors.primary.text",
+            "transform": "translateY(-1px)",
+            "boxShadow": "0 4px 12px rgba(0,0,0,0.1)"
+          },
+          "active": {
+            "transform": "translateY(0)",
+            "boxShadow": "0 2px 8px rgba(0,0,0,0.1)"
+          }
+        },
+        "animation": {
+          "transition": "all 0.2s ease-in-out"
+        }
+      },
+
+      "icon_arrow": {
+        "size": "1rem",
+        "color": "inherit",
+        "strokeWidth": "2px",
+        "style": "outline"
+      }
+    },
+
+    "patterns": {
+      "hero_layout": {
+        "structure": [
+          {
+            "element": "logo",
+            "spacing_after": "spacing.4xl"
+          },
+          {
+            "element": "hero_title",
+            "spacing_after": "spacing.xl"
+          },
+          {
+            "element": "tagline",
+            "spacing_after": "spacing.3xl"
+          },
+          {
+            "element": "primary_cta",
+            "spacing_after": "spacing.lg"
+          }
+        ]
+      },
+      
+      "content_hierarchy": {
+        "primary_message": "typography.textStyles.hero_title",
+        "supporting_message": "typography.textStyles.tagline",
+        "action_element": "components.primary_button"
+      }
+    },
+
+    "animations": {
+      "transitions": {
+        "fast": "0.15s ease-out",
+        "medium": "0.2s ease-in-out",
+        "slow": "0.3s ease-in-out"
+      },
+      "micro_interactions": {
+        "button_hover": {
+          "transform": "translateY(-1px)",
+          "transition": "transitions.medium"
+        },
+        "fade_in": {
+          "opacity": "0 to 1",
+          "duration": "0.4s",
+          "easing": "ease-out"
+        }
+      }
+    },
+
+    "accessibility": {
+      "contrast": {
+        "text_on_background": "AAA",
+        "button_text": "AAA"
+      },
+      "focusStates": {
+        "outline": "2px solid colors.primary.accent",
+        "outlineOffset": "2px"
+      },
+      "minTouchTarget": "44px"
+    },
+
+    "responsive": {
+      "hero_title": {
+        "mobile": {
+          "fontSize": "2.5rem",
+          "lineHeight": "1.1"
+        },
+        "tablet": {
+          "fontSize": "4rem",
+          "lineHeight": "1.1"
+        },
+        "desktop": {
+          "fontSize": "6rem",
+          "lineHeight": "1.1"
+        }
+      },
+      "spacing": {
+        "mobile": {
+          "hero_padding": "spacing.3xl spacing.md",
+          "content_gap": "spacing.xl"
+        },
+        "desktop": {
+          "hero_padding": "spacing.5xl spacing.lg",
+          "content_gap": "spacing.3xl"
+        }
+      }
+    },
+
+    "designPrinciples": {
+      "minimalism": "Use generous white space and clean typography to create focus",
+      "hierarchy": "Establish clear visual hierarchy through size, weight, and spacing",
+      "accessibility": "Ensure high contrast and readable text sizes across all devices",
+      "consistency": "Apply consistent spacing, typography, and interaction patterns",
+      "responsiveness": "Design fluid layouts that work seamlessly across all screen sizes"
+    },
+
+    "usage_guidelines": {
+      "color_application": "Use the neutral background with dark text for optimal readability. Reserve the accent color for primary actions and important UI elements.",
+      "typography_hierarchy": "Always maintain the established size relationships. Hero text should dominate, with supporting text clearly secondary.",
+      "spacing_rhythm": "Use the spacing scale consistently. Maintain generous white space around key elements.",
+      "component_composition": "Stack components vertically with consistent gaps. Center-align content for hero sections.",
+      "interaction_design": "Keep interactions subtle and purposeful. Use micro-animations to provide feedback without being distracting."
+    }
+  }
+}

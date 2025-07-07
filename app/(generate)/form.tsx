@@ -16,14 +16,12 @@ const PlanForm = () => {
     if (currentPage < 4) {
       setCurrentPage(currentPage + 1)
     }
-    console.log(formInfo)
   }
 
   const handlePrevious = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1)
     }
-    console.log(formInfo)
   }
 
   const handleFinish = () => {
