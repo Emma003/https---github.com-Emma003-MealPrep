@@ -1,9 +1,10 @@
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
+import ThemedText from '../themed/themed-text'
 
 const LoadScreen = () => {
   return (
     <View>
-      <Text>LoadScreen</Text>
+      <ThemedText className="text-2xl">Loading...</ThemedText>
     </View>
   )
 }

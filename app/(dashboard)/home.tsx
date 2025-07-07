@@ -1,7 +1,8 @@
+import MealCard from '@/components/meal-card'
 import Spacer from '@/components/spacer'
-import ThemedButton from '@/components/themed-button'
-import ThemedText from '@/components/themed-text'
-import ThemedView from '@/components/themed-view'
+import ThemedButton from '@/components/themed/themed-button'
+import ThemedText from '@/components/themed/themed-text'
+import ThemedView from '@/components/themed/themed-view'
 import useUser from '@/hooks/useUser'
 import { useRouter } from 'expo-router'
 import React from 'react'
@@ -21,6 +22,15 @@ const Home = () => {
       </ThemedText>
 
       <Spacer height={80}/>
+
+      <MealCard
+        id="1"
+        title="Chicken Curry"
+        cookingTime="10 min"
+        imageUrl="https://static.vecteezy.com/system/resources/thumbnails/053/286/853/small_2x/close-up-shot-of-crunchy-chicken-fry-fried-to-perfection-free-photo.jpg"
+        dishType="Main Dish"
+        color="pink"
+      />
 
       <ThemedButton
       onPress={() => router.push('/form')}

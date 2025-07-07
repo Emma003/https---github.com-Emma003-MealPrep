@@ -38,3 +38,16 @@ export type FormInfo = {
     foodsToAvoid: string[]
     cuisines: string[]
 }
+
+export type Recipe = {
+    id: string
+    title: string
+    imageUrl: string
+    instructions: string[]
+    ingredients: string[]
+    dishTypes: string[]
+    readyInMinutes: number
+    servings: number
+    sourceUrl: string
+    sourceName: string
+}

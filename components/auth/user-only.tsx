@@ -1,8 +1,7 @@
-import { View, Text } from 'react-native'
-import React, { ReactNode, useEffect } from 'react'
 import useUser from '@/hooks/useUser'
 import { useRouter } from 'expo-router'
-import ThemedLoader from '../themed-loader'
+import React, { ReactNode, useEffect } from 'react'
+import ThemedLoader from '../themed/themed-loader'
 
 interface UserOnlyProps {
     children: ReactNode

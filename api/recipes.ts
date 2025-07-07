@@ -1,6 +1,12 @@
 const spoonacularApiKey = process.env.EXPO_PUBLIC_SPOONACULAR_API_KEY;
 
-export const getMainDishRecipes = async (cuisine: string, includeIngredients: string, amount: number) => {
+export const getRecipesByType = async (
+    dishType: string, 
+    amount: number, 
+    cuisines: string[], 
+    includeIngredients: string[], 
+    excludeIngredients: string[]
+) => {
     if (!spoonacularApiKey) {
         throw new Error('Spoonacular API key is not defined');
     }
@@ -10,24 +16,84 @@ export const getMainDishRecipes = async (cuisine: string, includeIngredients: st
   
     const queryParams: Record<string, string> = {
         apiKey: spoonacularApiKey,
-        cuisine: cuisine,
+        type: dishType,
         number: amount.toString(),
-        includeIngredients: includeIngredients,
+        addRecipeInformation: 'true', // This gets all the detailed info in one call
         addRecipeNutrition: 'true',
+        instructionsRequired: 'true',
+        fillIngredients: 'true',
     };
+
+    // Add cuisine filter if specified
+    if (cuisines.length > 0) {
+        queryParams.cuisine = cuisines.join(',');
+    }
+
+    // Add include ingredients if specified
+    if (includeIngredients.length > 0) {
+        queryParams.includeIngredients = includeIngredients.join(',');
+    }
+
+    // Add exclude ingredients if specified
+    if (excludeIngredients.length > 0) {
+        queryParams.excludeIngredients = excludeIngredients.join(',');
+    }
   
     url.search = new URLSearchParams(queryParams).toString();
   
     try {
-        console.log("--------------------------------");
-        console.log(url.toString());
-        console.log("--------------------------------");
+        console.log(`Fetching ${amount} ${dishType} recipes...`);
         const searchResponse = await fetch(url.toString());
         const resultsJson = await searchResponse.json();
-        console.log(resultsJson);
         return resultsJson;
     } catch (error) {
-        console.error(error);
-        throw error; // Re-throw the error to handle it in the calling code
+        console.error(`Error fetching ${dishType} recipes:`, error);
+        throw error;
     }
+};
+
+// Helper function to get all recipes for a meal plan
+export const getAllRecipesForMealPlan = async (formInfo: any) => {
+    const recipePromises = [];
+    
+    // Map your form dish types to Spoonacular dish types
+    const dishTypeMap = {
+        mainDishes: 'main course',
+        desserts: 'dessert',
+        snacks: 'snack',
+        soups: 'soup',
+        salads: 'salad',
+        smoothies: 'drink' // or 'beverage' depending on what's available
+    };
+
+    // Create parallel requests for each dish type
+    for (const [formKey, spoonacularType] of Object.entries(dishTypeMap)) {
+        const amount = formInfo[formKey];
+        if (amount > 0) {
+            recipePromises.push(
+                getRecipesByType(
+                    spoonacularType,
+                    amount,
+                    formInfo.cuisines,
+                    formInfo.foodsToInclude,
+                    formInfo.foodsToAvoid
+                )
+            );
+        }
+    }
+
+    // Execute all requests in parallel
+    const results = await Promise.all(recipePromises);
+    
+    // Combine and organize results
+    const allRecipes = {
+        mainDishes: results.find(r => r.results?.[0]?.dishTypes?.includes('main course'))?.results || [],
+        desserts: results.find(r => r.results?.[0]?.dishTypes?.includes('dessert'))?.results || [],
+        snacks: results.find(r => r.results?.[0]?.dishTypes?.includes('snack'))?.results || [],
+        soups: results.find(r => r.results?.[0]?.dishTypes?.includes('soup'))?.results || [],
+        salads: results.find(r => r.results?.[0]?.dishTypes?.includes('salad'))?.results || [],
+        smoothies: results.find(r => r.results?.[0]?.dishTypes?.includes('drink'))?.results || []
+    };
+
+    return allRecipes;
 };

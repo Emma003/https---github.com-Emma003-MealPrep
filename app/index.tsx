@@ -1,8 +1,7 @@
 import Spacer from "@/components/spacer";
-import ThemedButton from "@/components/themed-button";
-import ThemedLink from "@/components/themed-link";
-import ThemedText from "@/components/themed-text";
-import ThemedView from "@/components/themed-view";
+import ThemedButton from "@/components/themed/themed-button";
+import ThemedText from "@/components/themed/themed-text";
+import ThemedView from "@/components/themed/themed-view";
 import { images } from "@/constants/images";
 import { useRouter } from "expo-router";
 import { Image, Text } from "react-native";
