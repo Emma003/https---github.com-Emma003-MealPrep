@@ -25,7 +25,7 @@ const Home = () => {
 
       <MealCard
         id="1"
-        title="Chicken Curry"
+        title="Bol santé à la grecque"
         cookingTime="10 min"
         imageUrl="https://static.vecteezy.com/system/resources/thumbnails/053/286/853/small_2x/close-up-shot-of-crunchy-chicken-fry-fried-to-perfection-free-photo.jpg"
         dishType="Main Dish"

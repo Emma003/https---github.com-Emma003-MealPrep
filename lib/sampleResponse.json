@@ -1,0 +1,550 @@
+{
+  "mainDishes": [
+    {
+      "id": 123456,
+      "title": "Spaghetti Carbonara",
+      "image": "https://spoonacular.com/recipeImages/123456-556x370.jpg",
+      "imageType": "jpg",
+      "dishTypes": ["main course"],
+      "readyInMinutes": 30,
+      "servings": 4,
+      "summary": "A classic Italian pasta dish...",
+      "cuisines": ["Italian"],
+      "nutrition": {
+        "nutrients": [
+          { "name": "Calories", "amount": 500, "unit": "kcal" },
+          { "name": "Protein", "amount": 20, "unit": "g" }
+        ]
+      },
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            { "number": 1, "step": "Boil pasta." },
+            { "number": 2, "step": "Cook pancetta." }
+          ]
+        }
+      ],
+      "extendedIngredients": [
+        { "id": 1001, "name": "butter", "amount": 2, "unit": "tbsp" },
+        { "id": 10120420, "name": "spaghetti", "amount": 400, "unit": "g" }
+      ]
+    },
+    {
+      "id": 223344,
+      "title": "Chicken Alfredo",
+      "image": "https://spoonacular.com/recipeImages/223344-556x370.jpg",
+      "imageType": "jpg",
+      "dishTypes": ["main course"],
+      "readyInMinutes": 35,
+      "servings": 4,
+      "summary": "Creamy chicken alfredo pasta.",
+      "cuisines": ["Italian"],
+      "nutrition": {
+        "nutrients": [
+          { "name": "Calories", "amount": 650, "unit": "kcal" },
+          { "name": "Protein", "amount": 35, "unit": "g" }
+        ]
+      },
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            { "number": 1, "step": "Cook chicken." },
+            { "number": 2, "step": "Prepare alfredo sauce." }
+          ]
+        }
+      ],
+      "extendedIngredients": [
+        { "id": 1009, "name": "parmesan", "amount": 50, "unit": "g" },
+        { "id": 1017, "name": "chicken breast", "amount": 2, "unit": "pieces" }
+      ]
+    },
+    {
+      "id": 334455,
+      "title": "Beef Stir Fry",
+      "image": "https://spoonacular.com/recipeImages/334455-556x370.jpg",
+      "imageType": "jpg",
+      "dishTypes": ["main course"],
+      "readyInMinutes": 25,
+      "servings": 3,
+      "summary": "Quick and easy beef stir fry.",
+      "cuisines": ["Chinese"],
+      "nutrition": {
+        "nutrients": [
+          { "name": "Calories", "amount": 400, "unit": "kcal" },
+          { "name": "Protein", "amount": 28, "unit": "g" }
+        ]
+      },
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            { "number": 1, "step": "Slice beef." },
+            { "number": 2, "step": "Stir fry with vegetables." }
+          ]
+        }
+      ],
+      "extendedIngredients": [
+        { "id": 23572, "name": "beef", "amount": 300, "unit": "g" },
+        { "id": 11291, "name": "green onion", "amount": 2, "unit": "stalks" }
+      ]
+    }
+  ],
+  "desserts": [
+    {
+      "id": 654321,
+      "title": "Chocolate Mousse",
+      "image": "https://spoonacular.com/recipeImages/654321-556x370.jpg",
+      "imageType": "jpg",
+      "dishTypes": ["dessert"],
+      "readyInMinutes": 20,
+      "servings": 2,
+      "summary": "A rich and creamy chocolate dessert...",
+      "cuisines": ["French"],
+      "nutrition": {
+        "nutrients": [
+          { "name": "Calories", "amount": 350, "unit": "kcal" },
+          { "name": "Protein", "amount": 6, "unit": "g" }
+        ]
+      },
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            { "number": 1, "step": "Melt chocolate." },
+            { "number": 2, "step": "Whip cream." }
+          ]
+        }
+      ],
+      "extendedIngredients": [
+        { "id": 19081, "name": "chocolate", "amount": 100, "unit": "g" },
+        { "id": 1053, "name": "cream", "amount": 200, "unit": "ml" }
+      ]
+    },
+    {
+      "id": 765432,
+      "title": "Lemon Tart",
+      "image": "https://spoonacular.com/recipeImages/765432-556x370.jpg",
+      "imageType": "jpg",
+      "dishTypes": ["dessert"],
+      "readyInMinutes": 45,
+      "servings": 6,
+      "summary": "Tangy and sweet lemon tart.",
+      "cuisines": ["French"],
+      "nutrition": {
+        "nutrients": [
+          { "name": "Calories", "amount": 420, "unit": "kcal" },
+          { "name": "Protein", "amount": 7, "unit": "g" }
+        ]
+      },
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            { "number": 1, "step": "Prepare crust." },
+            { "number": 2, "step": "Bake with lemon filling." }
+          ]
+        }
+      ],
+      "extendedIngredients": [
+        { "id": 9150, "name": "lemon", "amount": 2, "unit": "pieces" },
+        { "id": 1001, "name": "butter", "amount": 100, "unit": "g" }
+      ]
+    },
+    {
+      "id": 876543,
+      "title": "Apple Pie",
+      "image": "https://spoonacular.com/recipeImages/876543-556x370.jpg",
+      "imageType": "jpg",
+      "dishTypes": ["dessert"],
+      "readyInMinutes": 60,
+      "servings": 8,
+      "summary": "Classic apple pie with cinnamon.",
+      "cuisines": ["American"],
+      "nutrition": {
+        "nutrients": [
+          { "name": "Calories", "amount": 480, "unit": "kcal" },
+          { "name": "Protein", "amount": 5, "unit": "g" }
+        ]
+      },
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            { "number": 1, "step": "Prepare apples." },
+            { "number": 2, "step": "Bake in crust." }
+          ]
+        }
+      ],
+      "extendedIngredients": [
+        { "id": 9003, "name": "apples", "amount": 4, "unit": "pieces" },
+        { "id": 2010, "name": "cinnamon", "amount": 1, "unit": "tsp" }
+      ]
+    }
+  ],
+  "snacks": [
+    {
+      "id": 555111,
+      "title": "Granola Bar",
+      "image": "https://spoonacular.com/recipeImages/555111-556x370.jpg",
+      "imageType": "jpg",
+      "dishTypes": ["snack"],
+      "readyInMinutes": 10,
+      "servings": 1,
+      "summary": "A healthy granola bar snack.",
+      "cuisines": ["American"],
+      "nutrition": {
+        "nutrients": [
+          { "name": "Calories", "amount": 200, "unit": "kcal" },
+          { "name": "Protein", "amount": 4, "unit": "g" }
+        ]
+      },
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            { "number": 1, "step": "Mix ingredients." },
+            { "number": 2, "step": "Bake until golden." }
+          ]
+        }
+      ],
+      "extendedIngredients": [
+        { "id": 8120, "name": "oats", "amount": 50, "unit": "g" },
+        { "id": 12195, "name": "honey", "amount": 2, "unit": "tbsp" }
+      ]
+    },
+    {
+      "id": 555222,
+      "title": "Fruit Yogurt Parfait",
+      "image": "https://spoonacular.com/recipeImages/555222-556x370.jpg",
+      "imageType": "jpg",
+      "dishTypes": ["snack"],
+      "readyInMinutes": 5,
+      "servings": 1,
+      "summary": "Layered yogurt with fruit and granola.",
+      "cuisines": ["American"],
+      "nutrition": {
+        "nutrients": [
+          { "name": "Calories", "amount": 180, "unit": "kcal" },
+          { "name": "Protein", "amount": 6, "unit": "g" }
+        ]
+      },
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            { "number": 1, "step": "Layer yogurt, fruit, and granola." }
+          ]
+        }
+      ],
+      "extendedIngredients": [
+        { "id": 1116, "name": "yogurt", "amount": 100, "unit": "g" },
+        { "id": 9126, "name": "blueberries", "amount": 30, "unit": "g" }
+      ]
+    },
+    {
+      "id": 555333,
+      "title": "Cheese Crackers",
+      "image": "https://spoonacular.com/recipeImages/555333-556x370.jpg",
+      "imageType": "jpg",
+      "dishTypes": ["snack"],
+      "readyInMinutes": 15,
+      "servings": 2,
+      "summary": "Crispy homemade cheese crackers.",
+      "cuisines": ["American"],
+      "nutrition": {
+        "nutrients": [
+          { "name": "Calories", "amount": 250, "unit": "kcal" },
+          { "name": "Protein", "amount": 7, "unit": "g" }
+        ]
+      },
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            { "number": 1, "step": "Mix dough." },
+            { "number": 2, "step": "Bake until crisp." }
+          ]
+        }
+      ],
+      "extendedIngredients": [
+        { "id": 1041009, "name": "cheddar cheese", "amount": 50, "unit": "g" },
+        { "id": 18371, "name": "baking powder", "amount": 1, "unit": "tsp" }
+      ]
+    }
+  ],
+  "soups": [
+    {
+      "id": 789012,
+      "title": "Tomato Soup",
+      "image": "https://spoonacular.com/recipeImages/789012-556x370.jpg",
+      "imageType": "jpg",
+      "dishTypes": ["soup"],
+      "readyInMinutes": 25,
+      "servings": 3,
+      "summary": "A simple and delicious tomato soup.",
+      "cuisines": ["American"],
+      "nutrition": {
+        "nutrients": [
+          { "name": "Calories", "amount": 150, "unit": "kcal" },
+          { "name": "Protein", "amount": 4, "unit": "g" }
+        ]
+      },
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            { "number": 1, "step": "Heat tomatoes." },
+            { "number": 2, "step": "Blend and serve." }
+          ]
+        }
+      ],
+      "extendedIngredients": [
+        { "id": 11529, "name": "tomato", "amount": 5, "unit": "" },
+        { "id": 11215, "name": "garlic", "amount": 2, "unit": "cloves" }
+      ]
+    },
+    {
+      "id": 789013,
+      "title": "Chicken Noodle Soup",
+      "image": "https://spoonacular.com/recipeImages/789013-556x370.jpg",
+      "imageType": "jpg",
+      "dishTypes": ["soup"],
+      "readyInMinutes": 40,
+      "servings": 4,
+      "summary": "Classic chicken noodle soup.",
+      "cuisines": ["American"],
+      "nutrition": {
+        "nutrients": [
+          { "name": "Calories", "amount": 220, "unit": "kcal" },
+          { "name": "Protein", "amount": 15, "unit": "g" }
+        ]
+      },
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            { "number": 1, "step": "Boil chicken." },
+            { "number": 2, "step": "Add noodles and vegetables." }
+          ]
+        }
+      ],
+      "extendedIngredients": [
+        { "id": 1017, "name": "chicken breast", "amount": 1, "unit": "piece" },
+        { "id": 20124, "name": "egg noodles", "amount": 100, "unit": "g" }
+      ]
+    },
+    {
+      "id": 789014,
+      "title": "Minestrone Soup",
+      "image": "https://spoonacular.com/recipeImages/789014-556x370.jpg",
+      "imageType": "jpg",
+      "dishTypes": ["soup"],
+      "readyInMinutes": 50,
+      "servings": 5,
+      "summary": "Hearty Italian minestrone soup.",
+      "cuisines": ["Italian"],
+      "nutrition": {
+        "nutrients": [
+          { "name": "Calories", "amount": 180, "unit": "kcal" },
+          { "name": "Protein", "amount": 6, "unit": "g" }
+        ]
+      },
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            { "number": 1, "step": "Chop vegetables." },
+            { "number": 2, "step": "Simmer with beans and pasta." }
+          ]
+        }
+      ],
+      "extendedIngredients": [
+        { "id": 11282, "name": "onion", "amount": 1, "unit": "piece" },
+        { "id": 16043, "name": "kidney beans", "amount": 100, "unit": "g" }
+      ]
+    }
+  ],
+  "salads": [
+    {
+      "id": 888111,
+      "title": "Caesar Salad",
+      "image": "https://spoonacular.com/recipeImages/888111-556x370.jpg",
+      "imageType": "jpg",
+      "dishTypes": ["salad"],
+      "readyInMinutes": 15,
+      "servings": 2,
+      "summary": "Classic Caesar salad with croutons.",
+      "cuisines": ["Italian"],
+      "nutrition": {
+        "nutrients": [
+          { "name": "Calories", "amount": 320, "unit": "kcal" },
+          { "name": "Protein", "amount": 8, "unit": "g" }
+        ]
+      },
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            { "number": 1, "step": "Prepare dressing." },
+            { "number": 2, "step": "Toss with lettuce and croutons." }
+          ]
+        }
+      ],
+      "extendedIngredients": [
+        { "id": 11250, "name": "romaine lettuce", "amount": 1, "unit": "head" },
+        { "id": 18372, "name": "croutons", "amount": 30, "unit": "g" }
+      ]
+    },
+    {
+      "id": 888222,
+      "title": "Greek Salad",
+      "image": "https://spoonacular.com/recipeImages/888222-556x370.jpg",
+      "imageType": "jpg",
+      "dishTypes": ["salad"],
+      "readyInMinutes": 10,
+      "servings": 2,
+      "summary": "Fresh Greek salad with feta cheese.",
+      "cuisines": ["Greek"],
+      "nutrition": {
+        "nutrients": [
+          { "name": "Calories", "amount": 250, "unit": "kcal" },
+          { "name": "Protein", "amount": 6, "unit": "g" }
+        ]
+      },
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            { "number": 1, "step": "Chop vegetables." },
+            { "number": 2, "step": "Add feta and olives." }
+          ]
+        }
+      ],
+      "extendedIngredients": [
+        { "id": 1019, "name": "feta cheese", "amount": 50, "unit": "g" },
+        { "id": 9148, "name": "olive", "amount": 10, "unit": "pieces" }
+      ]
+    },
+    {
+      "id": 888333,
+      "title": "Quinoa Salad",
+      "image": "https://spoonacular.com/recipeImages/888333-556x370.jpg",
+      "imageType": "jpg",
+      "dishTypes": ["salad"],
+      "readyInMinutes": 20,
+      "servings": 3,
+      "summary": "Healthy quinoa salad with veggies.",
+      "cuisines": ["American"],
+      "nutrition": {
+        "nutrients": [
+          { "name": "Calories", "amount": 280, "unit": "kcal" },
+          { "name": "Protein", "amount": 9, "unit": "g" }
+        ]
+      },
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            { "number": 1, "step": "Cook quinoa." },
+            { "number": 2, "step": "Mix with vegetables." }
+          ]
+        }
+      ],
+      "extendedIngredients": [
+        { "id": 20035, "name": "quinoa", "amount": 100, "unit": "g" },
+        { "id": 11529, "name": "tomato", "amount": 1, "unit": "piece" }
+      ]
+    }
+  ],
+  "smoothies": [
+    {
+      "id": 345678,
+      "title": "Strawberry Banana Smoothie",
+      "image": "https://spoonacular.com/recipeImages/345678-556x370.jpg",
+      "imageType": "jpg",
+      "dishTypes": ["drink"],
+      "readyInMinutes": 5,
+      "servings": 1,
+      "summary": "A refreshing fruit smoothie.",
+      "cuisines": [],
+      "nutrition": {
+        "nutrients": [
+          { "name": "Calories", "amount": 180, "unit": "kcal" },
+          { "name": "Protein", "amount": 3, "unit": "g" }
+        ]
+      },
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            { "number": 1, "step": "Blend all ingredients." }
+          ]
+        }
+      ],
+      "extendedIngredients": [
+        { "id": 9316, "name": "strawberries", "amount": 100, "unit": "g" },
+        { "id": 9040, "name": "banana", "amount": 1, "unit": "" }
+      ]
+    },
+    {
+      "id": 345679,
+      "title": "Mango Pineapple Smoothie",
+      "image": "https://spoonacular.com/recipeImages/345679-556x370.jpg",
+      "imageType": "jpg",
+      "dishTypes": ["drink"],
+      "readyInMinutes": 7,
+      "servings": 1,
+      "summary": "Tropical mango pineapple smoothie.",
+      "cuisines": [],
+      "nutrition": {
+        "nutrients": [
+          { "name": "Calories", "amount": 200, "unit": "kcal" },
+          { "name": "Protein", "amount": 2, "unit": "g" }
+        ]
+      },
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            { "number": 1, "step": "Blend mango and pineapple with juice." }
+          ]
+        }
+      ],
+      "extendedIngredients": [
+        { "id": 9176, "name": "mango", "amount": 1, "unit": "piece" },
+        { "id": 9266, "name": "pineapple", "amount": 100, "unit": "g" }
+      ]
+    },
+    {
+      "id": 345680,
+      "title": "Green Spinach Smoothie",
+      "image": "https://spoonacular.com/recipeImages/345680-556x370.jpg",
+      "imageType": "jpg",
+      "dishTypes": ["drink"],
+      "readyInMinutes": 6,
+      "servings": 1,
+      "summary": "Healthy green smoothie with spinach.",
+      "cuisines": [],
+      "nutrition": {
+        "nutrients": [
+          { "name": "Calories", "amount": 160, "unit": "kcal" },
+          { "name": "Protein", "amount": 4, "unit": "g" }
+        ]
+      },
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            { "number": 1, "step": "Blend spinach with fruit and juice." }
+          ]
+        }
+      ],
+      "extendedIngredients": [
+        { "id": 11457, "name": "spinach", "amount": 50, "unit": "g" },
+        { "id": 9279, "name": "apple juice", "amount": 100, "unit": "ml" }
+      ]
+    }
+  ]
+}

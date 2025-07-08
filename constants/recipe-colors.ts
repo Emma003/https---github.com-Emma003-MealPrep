@@ -1,21 +1,21 @@
 export const RecipeColors = {
-  yellow: {
-    light: "#FFF7D1",
-    main: "#E9D47A",
-    dark: "#B8A84B",
-    accent: "#7A6A2B"
-  },
   pink: {
-    light: "#FDE3EA",
+    light: "#F9D2D4",
     main: "#F7B6C7",
-    dark: "#C97A97",
-    accent: "#A03A5A"
+    dark: "#BD0F59",
+    accent: "#C97A97"
   },
   blue: {
     light: "#D2F2F7",
     main: "#8ED6E8",
     dark: "#4A9CB3",
     accent: "#2B5A6A"
+  },
+  yellow: {
+    light: "#FFF7D1",
+    main: "#E9D47A",
+    dark: "#B8A84B",
+    accent: "#7A6A2B"
   },
   green: {
     light: "#E3F9E5",
