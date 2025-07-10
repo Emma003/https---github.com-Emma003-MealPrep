@@ -18,7 +18,7 @@ export const getRecipesByType = async (
         apiKey: spoonacularApiKey,
         type: dishType,
         number: amount.toString(),
-        addRecipeInformation: 'true', // This gets all the detailed info in one call
+        addRecipeInstructions: 'true', // This gets all the detailed info in one call
         addRecipeNutrition: 'true',
         instructionsRequired: 'true',
         fillIngredients: 'true',

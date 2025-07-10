@@ -2,17 +2,14 @@ import { Text, useColorScheme } from 'react-native'
 import React from 'react'
 import { Colors } from '@/constants/colors'
 
-const ThemedText = ({ font="medium", title = false, color="black", ...props }: any) => {
-    // const colorScheme = useColorScheme()
-    // const theme = Colors[colorScheme ?? 'light']
-    // const textColor = title ? theme.title : theme.text
-    const fontType = font == "medium" ? 'CircularStdMedium' : 'CircularStdLight'
+const ThemedText = ({ title = false, color="black", ...props }: any) => {
+    const font = title ? 'BrickDisplayPro' : 'CircularStdBook'
 
     return (
         <Text
             style={[{
                 color: color,
-                fontFamily: fontType,
+                fontFamily: font,
             }]}
             {...props}
         />

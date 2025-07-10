@@ -1,3 +1,4 @@
+import { getAllRecipesForMealPlan } from "@/api/recipes";
 import LoadScreen from "@/components/generate/load_screen";
 import HorizontalLine from "@/components/horizontal-line";
 import MealCard from "@/components/meal-card";
@@ -6,13 +7,19 @@ import ThemedView from "@/components/themed/themed-view";
 import { images } from "@/constants/images";
 import { RecipeColors } from "@/constants/recipe-colors";
 import useFormInfo from "@/hooks/useFormInfo";
-import sampleResponse from "@/lib/sampleResponse.json";
 import { useEffect, useState } from "react";
 import { FlatList, Image, ScrollView, View } from "react-native";
+import sampleResponse from "@/lib/sampleResponse.json";
+import * as Sharing from 'expo-sharing';
+import * as FileSystem from 'expo-file-system';
+import { Button } from 'react-native';
 
 const colorKeys = Object.keys(RecipeColors);
 
 function capitalize(str: string) {
+  if (str === 'mainDishes') {
+    return 'Main Dishes'
+  }
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
@@ -38,6 +45,8 @@ export default function LoadGenerate() {
         // TEMP: Use sampleResponse.json instead of API call
         setRecipes(sampleResponse);
         setLoading(false);
+
+
     }, []);
 
     return (
@@ -49,6 +58,7 @@ export default function LoadGenerate() {
         {loading ? (
           <LoadScreen />
         ) : (
+          <View className="flex-1 rounded-3xl overflow-hidden">
           <ScrollView 
             contentContainerStyle={{ 
               paddingBottom: 32,
@@ -94,6 +104,7 @@ export default function LoadGenerate() {
               )
             ))}
           </ScrollView>
+          </View>
         )}
       </ThemedView>
     );

@@ -36,7 +36,7 @@ const MealCard = ({ id, title, cookingTime, imageUrl, dishType, color }: MealCar
         <HorizontalLine marginTop={50} marginBottom={12} width={220} color={currentColor.dark} />
 
         <View className="flex flex-row gap-20 items-center justify-center">
-          <Badge text={dishType} textColor={currentColor.dark} />
+          <Badge text={dishType === 'mainDishes' ? 'Main Dishes' : dishType} textColor={currentColor.dark} />
           <View className="flex flex-row justify-between items-center">
             <MaterialCommunityIcons name="timer-outline" size={18} color={currentColor.dark} />
             <Text 

@@ -8,7 +8,7 @@ export default function GenerateLayout() {
   return (
     <UserOnly>
       <FormInfoProvider>
-        <StatusBar style="auto"/>
+        <StatusBar style="light"/>
         <Stack
           screenOptions={{
               headerShown: false,
