@@ -41,13 +41,21 @@ export type FormInfo = {
 
 export type Recipe = {
     id: string
+    spoonacularId: number
     title: string
     imageUrl: string
+    summary: string
+    dishType: string
     instructions: string[]
     ingredients: string[]
     dishTypes: string[]
+    preparationMinutes: number
+    cookingMinutes: number
     readyInMinutes: number
     servings: number
-    sourceUrl: string
-    sourceName: string
+    diets: string[]
+    totalCalories: number
+    totalCarbs: number
+    totalProtein: number
+    totalFat: number
 }

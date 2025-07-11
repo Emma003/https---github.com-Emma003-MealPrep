@@ -23,6 +23,7 @@ export const getRecipesByType = async (
         addRecipeNutrition: 'true',
         instructionsRequired: 'true',
         fillIngredients: 'true',
+        maxServings: '2'
     };
 
     // Add cuisine filter if specified
