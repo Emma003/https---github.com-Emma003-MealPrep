@@ -81,21 +81,21 @@ export default function LoadGenerate() {
               backgroundColor: '#faf3e4',
             }}>
 
-            <HorizontalLine marginTop={30} marginBottom={16} width={360} color='black'/>
+            <HorizontalLine marginTop={30} marginBottom={18} width={360} color='black'/>
             <ThemedText
                 className="text-5xl mb-4 ml-4"
                 
             >
-                Choose your recipes for the week
+                Choose your preferred meals   for the week
             </ThemedText>
             <Spacer height={18}/>
             {Object.entries(recipes).map(([dishType, arr], rowIdx) => (
               (arr as any[]).length > 0 && (
                 <View key={dishType} style={{ marginBottom: 32 }}>
                   <ThemedText
-                    className="text-2xl mb-4 ml-4"
+                    className="text-2xl mb-4 ml-4 "
                   >
-                    {capitalize(dishType)}
+                    {capitalize(dishType)} - {formInfo[dishTypeMap[dishType]]}
                   </ThemedText>
                   <FlatList
                     data={arr as any[]}
