@@ -13,6 +13,7 @@ export const getRecipesByType = async (
 
     const baseURL = "https://api.spoonacular.com/recipes/complexSearch";
     const url = new URL(baseURL);
+    amount += 2; // Add 2 to the amount to get more recipe options
   
     const queryParams: Record<string, string> = {
         apiKey: spoonacularApiKey,
